@@ -1,0 +1,152 @@
+/* Home Page */
+
+html {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+
+}
+
+.fa-user {
+    margin-left: 5px;
+}
+
+.navbar-brand{
+    font-family: 'Satisfy', cursive;
+    color: #fac219;
+}
+
+h1{
+    text-align: center;
+}
+
+img{
+    width: 100%;
+}
+
+.card {
+    min-height: 560px;
+}
+
+#footer-row {
+    background-color: #000;
+    text-align: center;
+    color: #fff;
+}
+
+.footer {
+    font-family: 'Montserrat';
+    margin-top: auto;
+    width: 100%;
+}
+
+.footer img {
+    border-radius: 50%;
+    width: 35%;
+}
+
+.footer-social {
+    background-color: white;
+    opacity: 0.6;
+    margin-right: 10px;
+}
+
+.footer img {
+    width: 35px;
+}
+
+.footer p {
+    margin-bottom: 5px;
+}
+
+.footer-social:hover {
+    opacity: 1;
+}
+
+.footer-body a:hover {
+    text-decoration: none;
+    color: #ff471a;
+}
+
+#copy-right {
+    font-size: 20px;
+    font-family: 'Montserrat';
+}
+
+/* Detail Page */
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.col-sm-6 > p {
+    font-size: 50px;
+    color: #ff8812;
+}
+
+#display-quantity {
+    width: 50px;
+    height: 38px;
+    display: inline;
+    padding: 0;
+}
+
+#display-quantity {
+    text-align: center;
+}
+
+.cart-message {
+    margin-top: 60px;
+}
+
+.cart-message > p {
+    font-size: 17px;
+    margin-top: 10px;
+}
+
+th {
+    color: #ffffff;
+    font-family: 'Montserrat';
+}
+
+/* Registration Page */
+
+.control-label {
+    padding-left: 0px;
+
+}
+
+#id_username, #id_last_name, #id_email, #id_first_name, #id_password, #id_phone, #id_address,  #id_city, #id_post_code {
+    width: 75%;
+}
+
+/* Log In Page */
+
+.text-danger {
+    font-size: 25px;
+}
+
+/* Account Page */
+
+.col-sm-4 > a {
+    display: block;
+}
+
+
+
+
+
+
+
