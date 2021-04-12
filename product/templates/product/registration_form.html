@@ -1,0 +1,26 @@
+{% extends 'product/base.html' %}
+{% block title %}Register{% endblock %}
+{% block body %}
+<div class="container">
+    <div class="row">
+        <div class="col-sm-2"></div>
+        <div class="col-sm-8">
+            <div>{% block error_message %}{% endblock %}</div>
+            <h4 class="display-4">{% block h3 %} Create a New Account {% endblock %}</h4><br>
+            {% block form %}
+                <form class="form-horizontal" action="" method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    {% include 'product/form_template.html' %}
+                    <div class="form-group">
+                        <div class="offset-sm-2 col-sm-10">
+                            <button type="submit" class="btn btn-success">Submit</button>
+                        </div>
+                    </div>
+                </form>
+            {% endblock %}
+        </div>
+        <div class="col-sm-2"></div>
+    </div>
+
+</div>
+{% endblock %}

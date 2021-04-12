@@ -1,0 +1,29 @@
+{% extends 'product/base.html' %}
+{% block body %}
+{% load static %}
+<img src="{% static 'product/images/cover_photo.jpg' %}" alt="cover_photo" style="width: 100%; margin-top: -25px;">
+    <div class="container">
+        <h3 class="display-3 text-center">Our Products</h3>
+        <div class="card-columns">
+            {% for product in object_list %}
+                <div class="card">
+                    <div class="header text-center"><img src="{{ product.image.url }}" alt="product logo" style="width: 50%"></div>
+                        <div class="card-body">
+                            <ul>
+                                <li><strong>Name:</strong> {{ product.name }}</li>
+                                <li><strong>Price:</strong> {{ product.price }}</li>
+                                <li><strong>Status:</strong> {{ product.status }}</li>
+                                <li><strong>Product Code:</strong> {{ product.product_code }}</li>
+                                <li><strong>Brand Name:</strong> {{ product.brand }}</li>
+                                <li><strong>Features:</strong> {{ product.features }}</li>
+                            </ul>
+                            <div class="text-center">
+                                <a href="{% url 'product:detail' product.id %}" class="btn btn-primary btn-small">More</a>
+                            </div>
+                        </div>
+                    </div>
+            {% endfor %}
+        </div>
+    </div>
+
+{% endblock %}

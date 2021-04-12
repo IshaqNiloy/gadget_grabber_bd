@@ -1,0 +1,12 @@
+{% extends 'product/registration_form.html' %}
+{% block title %} Log in {% endblock %}
+{% block h3 %} User Log In {% endblock %}
+{% block error_message %}
+    {% for message in messages %}
+        {% if message.tags == 'error' %}
+            <div class="alert alert-danger text-center large"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>{{ message }}</div>
+        {% else %}
+            <div class="alert alert-success text-center large"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>{{ message }}</div>
+        {% endif %}
+    {% endfor %}
+{% endblock %}

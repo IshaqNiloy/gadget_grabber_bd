@@ -1,0 +1,44 @@
+{% extends 'product/base.html' %}
+{% block title %}Product Details{% endblock %}
+{% block body %}
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6" style="min-height: 450px;">
+                <img src="{{product.image.url}}" alt="product image">
+            </div>
+            <div class="col-sm-6">
+                <h1>{{ product.name }}</h1>
+                <ul>
+                    <li>Price: {{ product.price }}</li>
+                    <li>Status: {{ product.status }}</li>
+                    <li>Product Code: {{ product.product_code }}</li>
+                    <li>Brand Name: {{ product.brand }}</li>
+                    <li>Features: {{ product.features }}</li>
+                </ul>
+                <p>{{ product.price }}</p>
+                <div class="add-to-cart">
+                    <form class="form-horizontal" action="{% url 'product:purchase' product.id %}" method="post">
+                        {% csrf_token%}
+                        <div class="form-group">
+                            <button type="button" class="btn btn-success" onclick="plus()"><span class="fa fa-plus"></span></button>
+                            <input type="number" id="display-quantity" value="1" name="product_quantity" class="form-control">
+                            <button  type="button" class="btn btn-danger" onclick="minus()"><span class="fa fa-minus"></button>
+                            {% if user.is_authenticated %}
+                                <button type="submit" class="btn btn-primary" onclick="showAlert()">Add to cart &nbsp <span class="fa fa-shopping-cart"></button>
+                            {% else %}
+                                <a href="{% url 'product:login' %}" class="btn btn-primary">Add to cart &nbsp <span class="fa fa-shopping-cart"></a>
+                            {% endif %}
+                            {% block error_message %}
+                                {% for message in messages %}
+                                    <div class="alert alert-success alert-dismissible text-center" id="cart-message"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>{{ message }}</div>
+                                {% endfor %}
+                            {% endblock %}
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+{% endblock %}

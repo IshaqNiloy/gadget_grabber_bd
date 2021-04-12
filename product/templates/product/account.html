@@ -1,0 +1,19 @@
+{% extends 'product/base.html' %}
+{% block title %}Account{% endblock %}
+{% block body %}
+<div class="container">
+    <div class="row">
+        <div class="col-sm-4"></div>
+        <div class="col-sm-4">
+            <h3>Account Information</h3>
+            <a href="{% url 'product:account-update' user.id %}">Edit your account information</a>
+            <a href="{% url 'product:change-password' %}">Change your password</a>
+            <h3>Purchase History</h3>
+            <a href="{% url 'product:purchase-history' user.id %}">See all your purchases </a>
+        </div>
+        <div class="col-sm-4"></div>
+
+    </div>
+
+</div>
+{% endblock %}
